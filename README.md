@@ -1,66 +1,30 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Как развернуть чтоб тестить блэйды
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Шоб развернуть для работы со вьюхами нада сделать следующее:
 
-## About Laravel
+- Склонировать репу - перейдти в папку где хотим видеть проект (всё делаем через консоль, разрабы жеж) ```git clone https://github.com/UnidentifiedCormorant/Lullen-s-opinion.git```
+- Когда склонируется перейдти в папку с репой и пробить ```composer install``` (для этого должен быть установлен composer, надеюсь ты не сносил винду, проверить установлен ли composer можно командой ```composer -v```(в любом месте))
+- В папке проекта пробить ```php artisan serve```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Готово ёбана рот
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Как тестить блэйды
+Вбиваем в адресную строку браузера http://127.0.0.1:8000/view/название-файла-с-блэйдом
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ВАЖНО: Блэйдина должна быть в папке ```resources/views/front-build```, иначе не найдёт её
 
-## Learning Laravel
+Если блэйдина находится в папке то пиши путь к ней относительно папки ```front-build``` через точки
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+РАБОЧИЕ URL С БЛЭЙДИНАМИ ПРИМЕРЫ ЧТО СЕЙЧАС ЕСТЬ В ПРОЕКТЕ:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- ```http://127.0.0.1:8000/view/try```
+- ```http://127.0.0.1:8000/view/deep.deeper.deepest``` - пример url для блэйдины в папке
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Когда разберёшься как это рабоает можно удалить файл try.blade.php и папку deep
 
-## Laravel Sponsors
+## Как работаем с гитом
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Основная ветка master. Создай ветку front-build когда будешь заливать первые блэйды и работай в ней до талого, я периодически буду подтягивать с неё изменения. Как рабоает asset() для картинок и как устроены блэйды подсмотри в проекте для Роскадастра. ЗАЛИВАТЬ В MASTER НЕ НАДО.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Как развернуть чтоб тестить с бэком
+![alt text](https://pbs.twimg.com/media/EaSt_AZUYAYiXA6.jpg)
