@@ -22,3 +22,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-stroke: 8px transparent;
 }
+
+.animate-pulse {
+    animation: pulse 1s infinite;
+}

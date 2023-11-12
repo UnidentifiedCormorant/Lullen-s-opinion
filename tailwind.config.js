@@ -14,6 +14,7 @@ export default {
       azur: "#30BABA",
       green: "#98C379",
       blue: "#61AFEF",
+      dark: "#282E36",
       main: "#131D29",
       console: "#38404C",
       consoleText: "#DCDFE4",
