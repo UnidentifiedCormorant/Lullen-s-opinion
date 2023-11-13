@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('vectors', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+
+            $table->unsignedBigInteger('stage_id');
+            $table->float('slot_1')->nullable();
+            $table->float('slot_2')->nullable();
+            $table->float('slot_3')->nullable();
+            $table->float('slot_4')->nullable();
+            $table->float('slot_5')->nullable();
+
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('vectors');
     }
 };
