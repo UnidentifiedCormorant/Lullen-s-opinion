@@ -6,6 +6,7 @@ export default {
       "title": ['"Prosto One"'],
       "main": ['"Didact Gothic"'],
       "console": ['"Cascadia Mono"'],
+      "pixel": ['"Press Start 2P"'],
     },
     colors: {
       white: "#ffffff",

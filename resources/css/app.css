@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Prosto+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
 @import url("../../node_modules/fontsource-cascadia-mono/index.css");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 @tailwind base;
 @tailwind components;
