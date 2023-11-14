@@ -23,10 +23,11 @@
         @yield('content')
     </div>
     <aside
-        class="bg-console flex flex-col items-left md:w-2/5 w-full min-h-[500px] p-5 font-console text-consoleText text-sm">
-        <p class=" inline-block mb-5">
+        class="bg-console flex flex-col items-left md:w-2/5 w-full min-h-[500px] p-5 font-console text-consoleText text-sm space-y-2">
+        <p>
             Here`s you can see logs and numbers in process of counting.
         </p>
+        @yield('console')
         <div class="flex items-center">
             <span class="text-green">lullen@lullenium</span><b>:</b><span class="text-blue">~</span>$
             <span class="bg-consoleText w-2 h-4 ml-[7px] animate-pulse"></span>
