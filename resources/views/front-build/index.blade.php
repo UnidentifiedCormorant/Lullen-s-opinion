@@ -13,7 +13,7 @@
             <h3 class="text-gradient font-title text-2xl lg:text-4xl mb-10">{{ $frameworks['title'] }}</h3>
             <ul class="w-full">
                 @foreach ($frameworks['items'] as $framework)
-                    <x-index.card framework="{{ $framework }}" />
+                    <x-index.card text="{{ $framework }}" color="bg-gradient-to-b from-purple to-purple-800" />
                 @endforeach
             </ul>
         </div>
@@ -21,7 +21,7 @@
             <h3 class="text-gradient font-title text-2xl lg:text-4xl mb-10">{{ $criterias['title'] }}</h3>
             <ul class="w-full">
                 @foreach ($criterias['items'] as $criteria)
-                    <x-index.card framework="{{ $criteria }}" />
+                    <x-index.card text="{{ $criteria }}" color="bg-gradient-to-b from-purple to-purple-800" />
                 @endforeach
             </ul>
         </div>

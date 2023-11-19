@@ -17,6 +17,7 @@ export default {
       'dark-azur': "#124F72",
       green: "#98C379",
       blue: "#61AFEF",
+      red: "#EF6161",
       dark: "#282E36",
       main: "#131D29",
       console: "#38404C",

@@ -9,10 +9,10 @@
     <input class="hidden peer" type="radio" id="{{ $id }}" name="{{ $name }}"
         value="{{ $value }}" />
     <label
-        class="inline-flex items-center justify-center w-full lg:py-5 lg:px-20 py-2 px-2 bg-{{ $color == 'purple' ? 'purple' : 'azur' }} rounded-full cursor-pointer 
+        class="inline-flex items-center justify-center w-full py-5 px-20 bg-{{ $color == 'purple' ? 'purple' : 'azur' }} rounded-full cursor-pointer 
         peer-checked:bg-dark-{{ $color == 'purple' ? 'purple' : 'azur' }}"
         for="{{ $id }}">
-        <div class="lg:text-2xl font-main text-center text-white whitespace-nowrap text-[14px]">
+        <div class="text-2xl font-main text-center text-white whitespace-nowrap">
             {{ $text }}
         </div>
     </label>

@@ -11,8 +11,8 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="flex flex-wrap">
-    <div class="bg-main flex flex-col flex-1 items-center md:w-3/5 w-full lg:p-6 p-3">
+<body class="grid lg:grid-cols-12 grid-cols-1">
+    <div class="bg-main p-5 space-y-5 lg:col-span-7">
         <header class="w-full bg-console rounded-2xl flex items-center justify-between p-[15px]">
             <h1 class="text-white font-title text-4xl">
                 Lullen's opinion
@@ -22,8 +22,7 @@
         @yield('subtitle')
         @yield('content')
     </div>
-    <aside
-        class="bg-console flex flex-col items-left md:w-2/5 w-full min-h-[500px] p-5 font-console text-consoleText text-sm space-y-2">
+    <aside class="bg-console p-4 space-y-2 lg:col-span-5 min-w-min font-console text-consoleText text-sm bold ">
         <p>
             Here`s you can see logs and numbers in process of counting.
         </p>

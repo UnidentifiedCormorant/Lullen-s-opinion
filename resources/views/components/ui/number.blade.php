@@ -4,7 +4,7 @@
 @endphp
 <div>
     <input type="text" id="{{ $id }}"
-        class="input bg-{{ $color == 'purple' ? 'purple' : 'azur' }} font-title text-white lg:text-[50px] text-[20px] text-center rounded-full block lg:w-20 lg:h-20 w-12 h-12 placeholder-white focus:outline-none"
+        class="input bg-{{ $color == 'purple' ? 'purple' : 'azur' }} font-title text-white text-[40px]  text-center rounded-full block w-[70px] h-[70px]  placeholder-white focus:outline-none"
         placeholder="__" />
 </div>
 <script>
