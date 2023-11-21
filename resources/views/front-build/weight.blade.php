@@ -1,8 +1,8 @@
 @extends('front-build.layouts.layout')
 @php
     $count = count($criterias['items']);
-    $expert_1 = false;
-    $expert_2 = true;
+    $expert_1 = true;
+    $expert_2 = false;
 @endphp
 @section('expert')
     <div
