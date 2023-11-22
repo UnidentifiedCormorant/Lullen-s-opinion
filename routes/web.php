@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontBuildController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MainController::class, 'start'])->name('start');
+Route::get('next-stage', [MainController::class, 'nextStage'])->name('nextStage');
+
+Route::get('next', [MainController::class, 'nextStage']);
 
 Route::get('view/{view}', [FrontBuildController::class, 'ShowView']);

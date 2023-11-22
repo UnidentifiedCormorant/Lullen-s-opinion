@@ -9,6 +9,11 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    public function __construct(
+        private readonly string $expertOneEnding = 'для <spam class="text-purple uppercase">Эксперта 1</spam>',
+        private readonly string $expertTwoEnding = 'для <spam class="text-purple uppercase">Эксперта 2</spam>',
+    ){}
+
     /**
      * Seed the application's database.
      */
@@ -19,74 +24,72 @@ class DatabaseSeeder extends Seeder
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Сравнение альтернатив между собой <font color="blue">(Эксперт 1)</font>',
+            'description' => 'Сравнение альтернатив между собой <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertOneEnding,
             'slug' => 'alternativesExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Сравнение альтернатив между собой <font color="red">(Эксперт 2)</font>',
+            'description' => 'Сравнение альтернатив между собой <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
             'slug' => 'alternativesExpert2',
         ]);
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">ВРЕМЯ РАЗРАБОТКИ</font> для <font color="red">Эксперта 1</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertOneEnding,
             'slug' => 'developmentTimeExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">ВРЕМЯ РАЗРАБОТКИ</font> для <font color="red">Эксперта 2</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
             'slug' => 'developmentTimeExpert2',
         ]);
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СЛОЖНОСТЬ ВНЕДРЕНИЯ</font> для <font color="red">Эксперта 1</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СЛОЖНОСТЬ ВНЕДРЕНИЯ </span>' . $this->expertOneEnding,
             'slug' => 'complexityOfImplementationExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СЛОЖНОСТЬ ВНЕДРЕНИЯ</font> для <font color="red">Эксперта 2</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СЛОЖНОСТЬ ВНЕДРЕНИЯ </span>' . $this->expertTwoEnding,
             'slug' => 'complexityOfImplementationExpert2',
         ]);
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">ТЕХНОЛОГИЧЕСКИЕ ВОЗМОЖНОСТИ</font> для <font color="red">Эксперта 1</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">ТЕХНОЛОГИЧЕСКИЕ ВОЗМОЖНОСТИ </span>' . $this->expertOneEnding,
             'slug' => 'technologicalCapabilitiesExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">ТЕХНОЛОГИЧЕСКИЕ ВОЗМОЖНОСТИ</font> для <font color="red">Эксперта 2</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">ТЕХНОЛОГИЧЕСКИЕ ВОЗМОЖНОСТИ </span>' . $this->expertTwoEnding,
             'slug' => 'technologicalCapabilitiesExpert2',
         ]);
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СПРОС</font> для <font color="red">Эксперта 1</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СПРОС </span>' . $this->expertOneEnding,
             'slug' => 'demandExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СПРОС</font> для <font color="red">Эксперта 2</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СПРОС </span>' . $this->expertTwoEnding,
             'slug' => 'demandExpert2',
         ]);
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СЛОЖНОСТЬ РАЗРАБОТКИ</font> для <font color="red">Эксперта 1</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СЛОЖНОСТЬ РАЗРАБОТКИ </span>' . $this->expertOneEnding,
             'slug' => 'complexityOfDevelopmentExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СЛОЖНОСТЬ РАЗРАБОТКИ</font> для <font color="red">Эксперта 2</font>',
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СЛОЖНОСТЬ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
             'slug' => 'complexityOfDevelopmentExpert2',
         ]);
-
         Stage::create([
-            'expert' => '',
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <font color="blue">СЛОЖНОСТЬ РАЗРАБОТКИ</font> для <font color="red">Эксперта 2</font>',
-            'slug' => 'complexityOfDevelopmentExpert2',
+            'description' => 'Финалочка',
+            'slug' => 'final',
         ]);
     }
 }
