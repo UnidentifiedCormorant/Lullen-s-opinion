@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\Enums\StagesEnum;
+use App\Domain\Enums\AlternativesEnum;
+use App\Domain\Enums\CriteriaEnum;
 use App\Services\Abstracts\StageInterface;
 use App\Services\Abstracts\VectorInterface;
+use Database\Seeders\DatabaseSeeder;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class MainController extends Controller
 {
@@ -17,27 +20,42 @@ class MainController extends Controller
     }
 
     /**
-     * Определяет какая из траниц отобразится в зависимости от прогресса
+     * Удаляет весь прогресс и отправляет на первую стадию
+     *
+     * @return RedirectResponse
+     */
+    public function newGame(): RedirectResponse
+    {
+        dd('так, падажжи ёбана');
+
+        $seeder = new DatabaseSeeder();
+        $seeder->run();
+
+        return redirect()->route('currentStage');
+    }
+
+    /**
+     * Определяет какая из страниц отобразится в зависимости от прогресса
      *
      * @return View
      */
-    //TODO: Завести ДТОху для stage и progress
     public function start(): View
     {
-        $stage = $this->stageService->getCurrentStage();
-        $progress = $stage->slug !== StagesEnum::ALTERNATIVES_EXPERT1->value;
-
-        return view('index',
-            [
-                'progress' => $progress,
-                'stage' => $stage,
-            ]
+        return view(
+            'index',
+            ['startPageData' => $this->stageService->getStartPageData(),]
         );
     }
 
+
     public function currentStage()
     {
-        dd('aaaaaaaaaaaaaaa');
+        dd($this->stageService->getCurrentStageData());
+
+        return view(
+            'stage',
+            ['stageData' => $this->stageService->getCurrentStageData()]
+        );
     }
 
     public function nextStage()

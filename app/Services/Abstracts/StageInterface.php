@@ -2,14 +2,23 @@
 
 namespace App\Services\Abstracts;
 
+use App\Domain\Entities\StageEntity;
+use App\Domain\Entities\StartPageEntity;
 use App\Models\Stage;
 
 interface StageInterface
 {
     /**
-     * Возвращает текущую стадию
+     * Возвращает данные для страницы с текущей стадией
      *
-     * @return Stage
+     * @return StageEntity
      */
-    public function getCurrentStage(): Stage;
+    public function getCurrentStageData(): StageEntity;
+
+    /**
+     * Получить данные для стартовой страницы
+     *
+     * @return StartPageEntity
+     */
+    public function getStartPageData(): StartPageEntity;
 }

@@ -2,6 +2,11 @@
 
 namespace App\Services;
 
+use App\Domain\Entities\StageEntity;
+use App\Domain\Entities\StartPageEntity;
+use App\Domain\Enums\AlternativesEnum;
+use App\Domain\Enums\CriteriaEnum;
+use App\Domain\Enums\StagesEnum;
 use App\Models\Stage;
 use App\Repositories\Abstracts\StageRepositoryInterface;
 use App\Services\Abstracts\StageInterface;
@@ -15,8 +20,31 @@ class StageService implements StageInterface
     /**
      * @inheritdoc
      */
-    public function getCurrentStage(): Stage
+    public function getCurrentStageData(): StageEntity
     {
-        return $this->stageRepository->getCurrentStage();
+        $stage = $this->stageRepository->getCurrentStage();
+
+        $buttonTitles = match ($stage->slug){
+            StagesEnum::ALTERNATIVES_EXPERT1->value || StagesEnum::ALTERNATIVES_EXPERT2->value => CriteriaEnum::toArray(),
+            default => AlternativesEnum::toArray(),
+        };
+
+        return new StageEntity(
+            stage: $stage,
+            buttonsTitles: $buttonTitles,
+        );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getStartPageData(): StartPageEntity
+    {
+        $stage = $this->stageRepository->getCurrentStage();
+
+        return new StartPageEntity(
+            progress: $stage->slug !== StagesEnum::ALTERNATIVES_EXPERT1->value,
+            stage: $stage,
+        );
     }
 }
