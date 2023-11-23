@@ -8,7 +8,7 @@
     </p>
 @endsection
 @section('content')
-    <main class="gap-8 columns-2 my-auto flex flex-wrap justify-center w-full">
+    <main class="gap-8 columns-2 my-auto flex flex-wrap justify-center w-full mb-10">
         <div class="flex flex-col text-center max-w-[480px] w-full">
             <h3 class="text-gradient font-title text-2xl lg:text-4xl mb-10">{{ $frameworks['title'] }}</h3>
             <ul class="w-full">
@@ -26,12 +26,12 @@
             </ul>
         </div>
     </main>
-    <footer class="flex">
+    <footer class="flex justify-center">
         @if ($progress == true)
             <div class="flex flex-col items-center justify-center">
                 <div class="flex lg:gap-x-[50px] gap-x-[20px]">
-                    <x-ui.button text="Начать заново" bgColor="gradient-to-b from-azur to-purple" />
-                    <x-ui.button text="Продолжить" bgColor="gradient-to-b from-azur to-purple" />
+                    <x-ui.button click="" text="Начать заново" bgColor="gradient-to-b from-azur to-purple" />
+                    <x-ui.button click="" text="Продолжить" bgColor="gradient-to-b from-azur to-purple" />
                 </div>
                 <div class="font-pixel text-center text-white mt-4">
                     <p>Текущий этап:</p>
@@ -43,7 +43,7 @@
                 </div>
             </div>
         @else
-            <x-ui.button text="Пайехали" bgColor="gradient-to-b from-azur to-purple" />
+            <x-ui.button click="" text="Пайехали" bgColor="gradient-to-b from-azur to-purple" />
         @endif
     </footer>
 @endsection

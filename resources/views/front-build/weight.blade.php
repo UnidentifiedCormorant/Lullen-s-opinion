@@ -44,7 +44,7 @@
         <p class="text-white font-pixel text-[16px] text-left">
             Выберете наиболее важный критерий из каждой пары и определите насколько он важнее другого по десятибальной шкале
         </p>
-        <div>
+        <div class="max-h-[42vh] overflow-y-auto scrollbar-thin scrollbar-track-console scrollbar-thumb-purple">
             @for ($i = 0; $i < $count; $i++)
                 @for ($j = $i + 1; $j < $count; $j++)
                     @php
@@ -58,15 +58,20 @@
                     </div>
                 @endfor
             @endfor
+            <div class="flex justify-center">
+                <x-ui.button click="" text="Готово!" bgColor="{{ $expert_1 == true ? 'purple' : 'azur' }}" />
+            </div>
         </div>
     </main>
-    <footer class="flex justify-center">
-        <x-ui.button text="Готово!" bgColor="{{ $expert_1 == true ? 'purple' : 'azur' }}" />
-    </footer>
+
 @endsection
 @section('console')
     <p>Check out the criteria table btw</p>
     {{-- TODO: Понять как  прокидывать нужные данные в компоеннту и отображать в таблице --}}
-    <x-console.table expert="{{ $expert_1 }}" />
-    <x-console.table expert="{{ $expert_2 }}" />
+    <div class="space-y-4" id="console-content">
+        <x-console.table expert="{{ $expert_1 }}" />
+        <x-console.table expert="{{ $expert_2 }}" />
+        <x-console.table expert="{{ $expert_2 }}" />
+        <x-console.table expert="{{ $expert_2 }}" />
+    </div>
 @endsection
