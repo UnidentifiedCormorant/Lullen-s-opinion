@@ -36,7 +36,10 @@ export default {
     extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar')({ nocompatible: true }),
+    require('tailwind-scrollbar'),
   ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }
 
