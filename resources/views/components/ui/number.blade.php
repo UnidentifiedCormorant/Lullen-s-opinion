@@ -1,9 +1,9 @@
-@props(['value', 'color'])
+@props(['value', 'color', 'name'])
 @php
     $id = md5(uniqid((string) mt_rand(), true)); // Генерация уникального идентификатора
 @endphp
 <div>
-    <input type="text" id="{{ $id }}"
+    <input type="text" id="{{ $id }}" name="{{ $name }}"
         class="input bg-{{ $color == 'purple' ? 'purple' : 'azur' }} font-title text-white text-[40px]  text-center rounded-full block w-[70px] h-[70px]  placeholder-white focus:outline-none"
         placeholder="__" />
 </div>

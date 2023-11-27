@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainController::class, 'start'])->name('start');
+Route::get('/', [MainController::class, 'startPage'])->name('startPage');
 
 Route::get('new-game', [MainController::class, 'newGame'])->name('newGame');
 Route::get('current-stage', [MainController::class, 'currentStage'])->name('currentStage');

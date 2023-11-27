@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\Enums\AlternativesEnum;
-use App\Domain\Enums\CriteriaEnum;
 use App\Services\Abstracts\StageInterface;
 use App\Services\Abstracts\VectorInterface;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -26,8 +25,6 @@ class MainController extends Controller
      */
     public function newGame(): RedirectResponse
     {
-        dd('так, падажжи ёбана');
-
         $seeder = new DatabaseSeeder();
         $seeder->run();
 
@@ -35,11 +32,11 @@ class MainController extends Controller
     }
 
     /**
-     * Определяет какая из страниц отобразится в зависимости от прогресса
+     * Определяет какая из сатртовых страниц отобразится в зависимости от прогресса и возвращает
      *
      * @return View
      */
-    public function start(): View
+    public function startPage(): View
     {
         return view(
             'index',
@@ -47,20 +44,22 @@ class MainController extends Controller
         );
     }
 
-
-    public function currentStage()
+    /**
+     * Отправляет сраницу с последней незавершённой стадией
+     *
+     * @return View
+     */
+    public function currentStage(): View
     {
-        dd($this->stageService->getCurrentStageData());
-
         return view(
             'stage',
             ['stageData' => $this->stageService->getCurrentStageData()]
         );
     }
 
-    public function nextStage()
+    public function nextStage(Request $request)
     {
-
+        dd($request->all());
     }
 
     private function quickMath()

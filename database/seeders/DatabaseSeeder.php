@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
 {
     public function __construct(
         private readonly string $expertOneEnding = 'для <spam class="text-purple uppercase">Эксперта 1</spam>',
-        private readonly string $expertTwoEnding = 'для <spam class="text-purple uppercase">Эксперта 2</spam>',
+        private readonly string $expertTwoEnding = 'для <spam class="text-azur uppercase">Эксперта 2</spam>',
     ){}
 
     /**
@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
 
         Stage::create([
             'expert' => 1,
-            'description' => 'Сравнение альтернатив между собой <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertOneEnding,
+            'description' => 'Сравнение критериев между собой ' . $this->expertOneEnding,
             'slug' => 'alternativesExpert1',
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Сравнение альтернатив между собой <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
+            'description' => 'Сравнение критериев между собой ' . $this->expertTwoEnding,
             'slug' => 'alternativesExpert2',
         ]);
 
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-azur uppercase">ВРЕМЯ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
             'slug' => 'developmentTimeExpert2',
         ]);
 
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СЛОЖНОСТЬ ВНЕДРЕНИЯ </span>' . $this->expertTwoEnding,
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-azur uppercase">СЛОЖНОСТЬ ВНЕДРЕНИЯ </span>' . $this->expertTwoEnding,
             'slug' => 'complexityOfImplementationExpert2',
         ]);
 
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">ТЕХНОЛОГИЧЕСКИЕ ВОЗМОЖНОСТИ </span>' . $this->expertTwoEnding,
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-azur uppercase">ТЕХНОЛОГИЧЕСКИЕ ВОЗМОЖНОСТИ </span>' . $this->expertTwoEnding,
             'slug' => 'technologicalCapabilitiesExpert2',
         ]);
 
@@ -73,7 +73,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СПРОС </span>' . $this->expertTwoEnding,
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-azur uppercase">СПРОС </span>' . $this->expertTwoEnding,
             'slug' => 'demandExpert2',
         ]);
 
@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Stage::create([
             'expert' => 2,
-            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-purple uppercase">СЛОЖНОСТЬ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
+            'description' => 'Текущий этап: Сравнение альтернатив для критетрия <span class="text-azur uppercase">СЛОЖНОСТЬ РАЗРАБОТКИ </span>' . $this->expertTwoEnding,
             'slug' => 'complexityOfDevelopmentExpert2',
         ]);
         Stage::create([
