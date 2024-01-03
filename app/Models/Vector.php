@@ -10,4 +10,9 @@ class Vector extends Model
     use HasFactory;
 
     public $guarded = false;
+
+    public function stage()
+    {
+        return $this->belongsTo(Stage::class);
+    }
 }

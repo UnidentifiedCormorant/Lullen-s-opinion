@@ -67,7 +67,6 @@
 @endsection
 @section('console')
     <p>Check out the criteria table btw</p>
-    {{-- TODO: Понять как  прокидывать нужные данные в компоеннту и отображать в таблице --}}
     <div class="space-y-4" id="console-content">
         <x-console.table expert="{{ $expert_1 }}" />
         <x-console.table expert="{{ $expert_2 }}" />

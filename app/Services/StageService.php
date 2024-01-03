@@ -4,9 +4,8 @@ namespace App\Services;
 
 use App\Domain\Entities\StageEntity;
 use App\Domain\Entities\StartPageEntity;
-use App\Domain\Enums\AlternativesEnum;
-use App\Domain\Enums\CriteriaEnum;
 use App\Domain\Enums\StagesEnum;
+use App\Facades\StageHelper;
 use App\Repositories\Abstracts\StageRepositoryInterface;
 use App\Services\Abstracts\StageInterface;
 
@@ -32,15 +31,9 @@ class StageService implements StageInterface
     {
         $stage = $this->stageRepository->getCurrentStage();
 
-        $buttonTitles = match ($stage->slug){
-            StagesEnum::ALTERNATIVES_EXPERT1->value => CriteriaEnum::toArray(),
-            StagesEnum::ALTERNATIVES_EXPERT2->value => CriteriaEnum::toArray(),
-            default => AlternativesEnum::toArray(),
-        };
-
         return new StageEntity(
             stage: $stage,
-            buttonsTitles: $buttonTitles,
+            buttonsTitles: StageHelper::getStageTitles($stage),
         );
     }
 

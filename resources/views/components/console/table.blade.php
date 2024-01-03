@@ -1,5 +1,4 @@
 @props(['expert'])
-{{-- TODO: Понять как  прокидывать нужные данные в компоеннту и отображать в таблице --}}
 <div class="space-y-2">
     <p class="{{ $expert == 'expert_1' ? 'text-purple' : 'text-azur' }} ">
         This is what the expert {{ $expert == 'expert_1' ? '1' : '2' }} stumbled upon about the criteria

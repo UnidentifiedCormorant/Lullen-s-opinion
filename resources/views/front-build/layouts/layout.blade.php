@@ -44,19 +44,19 @@
     // // Прокручиваем блок вниз
     // consoleElement.scrollTop = consoleElement.scrollHeight - consoleElement.clientHeight;
 
-    document.addEventListener("DOMContentLoaded", () => {
-        for (let i = 0; i < 10; i++) {
-            setTimeout(() => {
-                const consoleContent = document.getElementById('console-content');
-                const newElement = document.createElement('p');
-                newElement.textContent = "New log message " + (i + 1);
-                consoleContent.appendChild(newElement);
-
-                // Автоматическая прокрутка вниз при добавлении нового элемента
-                scrollConsoleToBottom();
-            }, i * 2000);
-        }
-    });
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     for (let i = 0; i < 10; i++) {
+    //         setTimeout(() => {
+    //             const consoleContent = document.getElementById('console-content');
+    //             const newElement = document.createElement('p');
+    //             newElement.textContent = "New log message " + (i + 1);
+    //             consoleContent.appendChild(newElement);
+    //
+    //             // Автоматическая прокрутка вниз при добавлении нового элемента
+    //             scrollConsoleToBottom();
+    //         }, i * 2000);
+    //     }
+    // });
 
     // Функция для прокрутки блока вниз
     function scrollConsoleToBottom() {

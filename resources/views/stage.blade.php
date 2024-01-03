@@ -46,7 +46,7 @@
         </div>
         <p class="text-white font-pixel text-[12px] text-left">
             {!! $stageData->stage->description !!}.
-            Выберете наиболее важный критерий из каждой пары и определите насколько он важнее другого по десятибальной шкале.
+            Выберете наиболее важный критерий из каждой пары и определите насколько он важнее другого по десятибалльной шкале.
         </p>
         <form action="{{route('nextStage')}}" method="post">
             @csrf
@@ -70,11 +70,13 @@
 
 @section('console')
     <p>Check out the criteria table btw</p>
-    {{-- TODO: Понять как  прокидывать нужные данные в компоеннту и отображать в таблице --}}
+    @if(session()->has('consistency_relationship_error') )
+        {{--TODO: Сделать красным--}}
+        <p><span class="text-red">{{session()->get('consistency_relationship_error')}}</span></p>
+    @endif
     <div class="space-y-4" id="console-content">
-{{--        <x-console.table expert="{{ $expert_1 }}" />--}}
-{{--        <x-console.table expert="{{ $expert_2 }}" />--}}
-{{--        <x-console.table expert="{{ $expert_2 }}" />--}}
-{{--        <x-console.table expert="{{ $expert_2 }}" />--}}
+        @foreach($consoleLogs as $log)
+            <x-console_table :log="$log" />
+        @endforeach
     </div>
 @endsection

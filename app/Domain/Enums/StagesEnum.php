@@ -16,6 +16,7 @@ enum StagesEnum: string
     case DEMAND_EXPERT2 = 'demandExpert2';
     case COMPLEXITY_OF_DEVELOPMENT_EXPERT1 = 'complexityOfDevelopmentExpert1';
     case COMPLEXITY_OF_DEVELOPMENT_EXPERT2 = 'complexityOfDevelopmentExpert2';
+    case FINAL = 'final';
 
     public function getSlug(): string
     {
@@ -32,6 +33,7 @@ enum StagesEnum: string
             StagesEnum::DEMAND_EXPERT2 => 'demandExpert2',
             StagesEnum::COMPLEXITY_OF_DEVELOPMENT_EXPERT1 => 'complexityOfDevelopmentExpert1',
             StagesEnum::COMPLEXITY_OF_DEVELOPMENT_EXPERT2 => 'complexityOfDevelopmentExpert2',
+            StagesEnum::FINAL => 'final',
         };
     }
 }

@@ -184,7 +184,9 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'StageHelper' => \App\Facades\StageHelper::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'consistency_checking' => env('CONSISTENCY_CHECKING'),
 ];
