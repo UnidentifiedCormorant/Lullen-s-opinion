@@ -14,9 +14,11 @@
 <body class="grid lg:grid-cols-12 grid-cols-1 ">
     <div class="bg-main p-5 flex flex-col lg:col-span-7">
         <header class="w-full bg-console rounded-2xl flex items-center justify-between p-[15px]">
-            <h1 class="text-white font-title text-4xl">
-                Lullen's opinion
-            </h1>
+            <a href="{{route('startPage')}}">
+                <h1 class="text-white font-title text-4xl">
+                    Lullen's opinion
+                </h1>
+            </a>
             @yield('expert')
         </header>
         @yield('subtitle')
@@ -41,22 +43,22 @@
     // // Получаем элемент блока, который нужно прокрутить
     // const consoleElement = document.querySelector('aside');
 
-    // // Прокручиваем блок вниз
+    // Прокручиваем блок вниз
     // consoleElement.scrollTop = consoleElement.scrollHeight - consoleElement.clientHeight;
 
-    // document.addEventListener("DOMContentLoaded", () => {
-    //     for (let i = 0; i < 10; i++) {
-    //         setTimeout(() => {
-    //             const consoleContent = document.getElementById('console-content');
-    //             const newElement = document.createElement('p');
-    //             newElement.textContent = "New log message " + (i + 1);
-    //             consoleContent.appendChild(newElement);
-    //
-    //             // Автоматическая прокрутка вниз при добавлении нового элемента
-    //             scrollConsoleToBottom();
-    //         }, i * 2000);
-    //     }
-    // });
+    document.addEventListener("DOMContentLoaded", () => {
+        for (let i = 0; i < 1; i++) {
+            setTimeout(() => {
+                // const consoleContent = document.getElementById('console-content');
+                // const newElement = document.createElement('p');
+                // newElement.textContent = "New log message " + (i + 1);
+                // consoleContent.appendChild(newElement);
+
+                // Автоматическая прокрутка вниз при добавлении нового элемента
+                scrollConsoleToBottom();
+            }, i * 2000);
+        }
+    });
 
     // Функция для прокрутки блока вниз
     function scrollConsoleToBottom() {

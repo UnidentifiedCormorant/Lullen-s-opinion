@@ -35,14 +35,15 @@ use App\Domain\Enums\CriteriaEnum;
                     <td>{{$number}}</td>
                 @endforeach
                 <td>{{$log->criteriaTable->compositions[$loop->index]}}</td>
-                <td>{{round($log->criteriaTable->weights[$loop->index], 7)}}</td>
+                <td><span class="text-green">{{round($log->criteriaTable->weights[$loop->index], 7)}}</span></td>
             </tr>
         @endforeach
             <th>Суммы</th>
             @foreach($log->criteriaTable->sums as $sum)
-                <td>{{$sum}}</td>
+                <td><span class="text-blue">{{$sum}}</span></td>
             @endforeach
-            <td>{{array_sum($log->criteriaTable->compositions)}}</td>
+            <td><span class="text-blue">{{array_sum($log->criteriaTable->compositions)}}</span></td>
+            <td><span class="text-yellow">{{array_sum($log->criteriaTable->weights)}}</span></td>
         </tbody>
     </table>
     <p class="{{ $log->stage->expert == '1' ? 'text-purple' : 'text-azur' }} ">

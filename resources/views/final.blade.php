@@ -41,16 +41,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($frameworks['items'] as $framework)
-                        <tr>
-                            <td class="bg-dark rounded-lg p-2">
-                                {{ $framework }}
-                            </td>
-                            @foreach ($criterias['items'] as $criteria)
-                                <td class="bg-console rounded-lg p-2">1</td>
-                            @endforeach
-                        </tr>
-                    @endforeach
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Angular</td>
+                    <td class="bg-console rounded-lg p-2">50</td>
+                    <td class="bg-console rounded-lg p-2">9</td>
+                    <td class="bg-console rounded-lg p-2">9</td>
+                    <td class="bg-console rounded-lg p-2">4</td>
+                    <td class="bg-console rounded-lg p-2">1</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">React.js</td>
+                    <td class="bg-console rounded-lg p-2">80</td>
+                    <td class="bg-console rounded-lg p-2">5</td>
+                    <td class="bg-console rounded-lg p-2">7</td>
+                    <td class="bg-console rounded-lg p-2">5</td>
+                    <td class="bg-console rounded-lg p-2">4</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Vue.js</td>
+                    <td class="bg-console rounded-lg p-2">74</td>
+                    <td class="bg-console rounded-lg p-2">7</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Dojo 2</td>
+                    <td class="bg-console rounded-lg p-2">51</td>
+                    <td class="bg-console rounded-lg p-2">9</td>
+                    <td class="bg-console rounded-lg p-2">2</td>
+                    <td class="bg-console rounded-lg p-2">1</td>
+                    <td class="bg-console rounded-lg p-2">4</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Ember</td>
+                    <td class="bg-console rounded-lg p-2">68</td>
+                    <td class="bg-console rounded-lg p-2">10</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                    <td class="bg-console rounded-lg p-2">2</td>
+                    <td class="bg-console rounded-lg p-2">2</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -86,8 +116,8 @@
         @endforeach
     </div>
 
-    {{--TODO: Замутить отступ между таблицами--}}
     <x-summary_console_table :expertSummary="$finalData->expertOneSummary" />
+    <br>
     <x-summary_console_table :expertSummary="$finalData->expertTwoSummary" />
 
     <p>Let's summarize, find out who is the most lullen here:</p>
@@ -105,7 +135,7 @@
 
     <p>
         <span class="text-green uppercase">WINNER:</span>
-        <span class="text-{{ $color }}">{{ $finalData->winner }}</span>
+        <span class="text-{{ $finalData->winnerColor }}">{{ $finalData->winner }}</span>
     </p>
     <p><span class="text-blue uppercase">CONGRADS!</span> <span class="text-red">(get off now)</span></p>
 @endsection

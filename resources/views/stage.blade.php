@@ -31,16 +31,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($frameworks['items'] as $framework)
-                        <tr>
-                            <td class="bg-dark rounded-lg p-2">
-                                {{ $framework }}
-                            </td>
-                            @foreach ($criterias['items'] as $criteria)
-                                <td class="bg-console rounded-lg p-2">1</td>
-                            @endforeach
-                        </tr>
-                    @endforeach
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Angular</td>
+                    <td class="bg-console rounded-lg p-2">50</td>
+                    <td class="bg-console rounded-lg p-2">9</td>
+                    <td class="bg-console rounded-lg p-2">9</td>
+                    <td class="bg-console rounded-lg p-2">4</td>
+                    <td class="bg-console rounded-lg p-2">1</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">React.js</td>
+                    <td class="bg-console rounded-lg p-2">80</td>
+                    <td class="bg-console rounded-lg p-2">5</td>
+                    <td class="bg-console rounded-lg p-2">7</td>
+                    <td class="bg-console rounded-lg p-2">5</td>
+                    <td class="bg-console rounded-lg p-2">4</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Vue.js</td>
+                    <td class="bg-console rounded-lg p-2">74</td>
+                    <td class="bg-console rounded-lg p-2">7</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Dojo 2</td>
+                    <td class="bg-console rounded-lg p-2">51</td>
+                    <td class="bg-console rounded-lg p-2">9</td>
+                    <td class="bg-console rounded-lg p-2">2</td>
+                    <td class="bg-console rounded-lg p-2">1</td>
+                    <td class="bg-console rounded-lg p-2">4</td>
+                </tr>
+                <tr>
+                    <td class="bg-dark rounded-lg p-2">Ember</td>
+                    <td class="bg-console rounded-lg p-2">68</td>
+                    <td class="bg-console rounded-lg p-2">10</td>
+                    <td class="bg-console rounded-lg p-2">3</td>
+                    <td class="bg-console rounded-lg p-2">2</td>
+                    <td class="bg-console rounded-lg p-2">2</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -70,13 +100,12 @@
 
 @section('console')
     <p>Check out the criteria table btw</p>
-    @if(session()->has('consistency_relationship_error') )
-        {{--TODO: Сделать красным--}}
-        <p><span class="text-red">{{session()->get('consistency_relationship_error')}}</span></p>
-    @endif
     <div class="space-y-4" id="console-content">
         @foreach($consoleLogs as $log)
             <x-console_table :log="$log" />
         @endforeach
     </div>
+    @if(session()->has('consistency_relationship_error') )
+        <p><span class="text-red">{{session()->get('consistency_relationship_error')}}</span></p>
+    @endif
 @endsection

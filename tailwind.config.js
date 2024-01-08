@@ -22,6 +22,7 @@ export default {
       main: "#131D29",
       console: "#38404C",
       consoleText: "#DCDFE4",
+      yellow: "#efbc12",
     },
     keyframes: {
       pulse: {

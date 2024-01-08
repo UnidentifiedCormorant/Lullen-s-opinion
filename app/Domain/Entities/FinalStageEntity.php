@@ -8,6 +8,7 @@ use App\Services\Math\CriteriaTable;
 class FinalStageEntity
 {
     public string $winner = 'Эксперт ';
+    public string $winnerColor = 'purple';
 
     public function __construct
     (
@@ -16,5 +17,9 @@ class FinalStageEntity
     )
     {
         $this->winner .= $this->expertOneSummary->maxFinalWeight > $this->expertTwoSummary->maxFinalWeight ? '1' : '2' ;
+
+        if($this->winner === 'Эксперт 2'){
+            $this->winnerColor = 'azur';
+        }
     }
 }

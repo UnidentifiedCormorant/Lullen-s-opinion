@@ -16,14 +16,13 @@ class CriteriaTable
     public float $consistencyIndex;
     public float $consistencyRelationship;
 
-    //TODO: Сделать вызов методов без параметров
     public function __construct(array $grouped)
     {
         $this->matrix = $grouped;
-        $this->compositions = $this->countCompositions($this->matrix); //Считаем произведения по строкам
-        $this->sums = $this->countSums($this->matrix); //Считаем суммы по столбцам
-        $this->weights = $this->countWeights($this->compositions); //Считаем веса
-        $this->lambdaMax = $this->countLambdaMax(); //Считаем λmax
+        $this->compositions = $this->countCompositions(); //Считаем произведения по строкам
+        $this->sums = $this->countSums(); //Считаем суммы по столбцам
+        $this->weights = $this->countWeights(); //Считаем веса
+        $this->lambdaMax = $this->countLambdaMax(); //Считаем λmax (собственное значение матрицы)
         $this->consistencyIndex = $this->countConsistencyIndex(); //Считаем индекс согласованности
         $this->consistencyRelationship = $this->consistencyIndex / self::RANDOM_INDEX; //Считаем отношение согласованности
     }
@@ -49,7 +48,7 @@ class CriteriaTable
      */
     private function countConsistencyIndex(): float
     {
-        return ($this->lambdaMax - 5) / (5 - 1);
+        return (abs($this->lambdaMax - 5)) / (5 - 1);
     }
 
     /**
@@ -71,16 +70,15 @@ class CriteriaTable
     /**
      * Посчитать веса
      *
-     * @param $compositions
      * @return array
      */
-    private function countWeights($compositions): array
+    private function countWeights(): array
     {
         $weights = [];
 
-        $compositionsSum = array_sum($compositions);
+        $compositionsSum = array_sum($this->compositions);
 
-        foreach ($compositions as $composition){
+        foreach ($this->compositions as $composition){
             $weights[] = (float)($composition / $compositionsSum);
         }
 
@@ -90,15 +88,14 @@ class CriteriaTable
     /**
      * Посчитать суммы по столбцам
      *
-     * @param $matrix
      * @return array
      */
-    private function countSums($matrix): array
+    private function countSums(): array
     {
         $sums = [0, 0, 0, 0, 0];
 
         for($i = 0; $i < self::MATRIX_SIZE; $i++){
-            foreach ($matrix as $horizontalVector){
+            foreach ($this->matrix as $horizontalVector){
                 $sums[$i] += $horizontalVector[$i];
             }
         }
@@ -109,10 +106,9 @@ class CriteriaTable
     /**
      * Посчитать произведения по строкам
      *
-     * @param $matrix
      * @return array
      */
-    private function countCompositions($matrix): array
+    private function countCompositions(): array
     {
         $multiply = function (array $numbers){
             $result = 1;
@@ -124,6 +120,6 @@ class CriteriaTable
             return $result;
         };
 
-        return array_map($multiply, $matrix);
+        return array_map($multiply, $this->matrix);
     }
 }

@@ -83,6 +83,8 @@ class MainController extends Controller
      */
     public function nextStage(StageRequest $request): RedirectResponse
     {
+        session()->forget('consistency_relationship_error');
+
         $data = collect($request->toArray());
         $data->forget('_token');
 
